@@ -1554,11 +1554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasin\\Documents\\VSCodeProjects\\crmapp\\crmapp.csproj",
+      "projectUniqueName": "C:\\Users\\Jasin\\Documents\\ASP.NET\\crmapp\\crmapp.csproj",
       "projectName": "crmapp",
-      "projectPath": "C:\\Users\\Jasin\\Documents\\VSCodeProjects\\crmapp\\crmapp.csproj",
+      "projectPath": "C:\\Users\\Jasin\\Documents\\ASP.NET\\crmapp\\crmapp.csproj",
       "packagesPath": "C:\\Users\\Jasin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jasin\\Documents\\VSCodeProjects\\crmapp\\obj\\",
+      "outputPath": "C:\\Users\\Jasin\\Documents\\ASP.NET\\crmapp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jasin\\AppData\\Roaming\\NuGet\\NuGet.Config",
