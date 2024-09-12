@@ -67,5 +67,42 @@ namespace crmapp.Pages.Customers
                ErrorMessage = ex.Message;
             }
         }
+
+        public void OnPost(){
+            if (!ModelState.IsValid){
+                return;
+            }
+
+            if (Phone == null) Phone = "";
+            if (Address == null) Address = "";
+            if (Notes == null) Notes = "";
+
+            // update customer details
+            try{
+                string connectionString = "Server=.\\sqlexpress;Database=crmdb;Trusted_Connection=True;TrustServerCertificate=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString)){
+                    connection.Open();
+                    string sql = "UPDATE customers SET firstname=@firstname, lastname=@lastname, email=@email, "+
+                                 "phone=@phone, address=@address, company=@company, notes=@notes WHERE id=@id;";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection)){
+                        command.Parameters.AddWithValue("@firstname", Firstname);
+                        command.Parameters.AddWithValue("@lastname", Lastname);
+                        command.Parameters.AddWithValue("@email", Email);
+                        command.Parameters.AddWithValue("@phone", Phone);
+                        command.Parameters.AddWithValue("@address", Address);
+                        command.Parameters.AddWithValue("@company", Company);
+                        command.Parameters.AddWithValue("@notes", Notes);
+                        command.Parameters.AddWithValue("@id", Id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch(Exception ex){
+                ErrorMessage = ex.Message;
+                return;
+            }
+            Response.Redirect("/Customers/Index");
+        }
     }
 }
